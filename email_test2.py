@@ -13,7 +13,7 @@ EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 s.starttls()
 
 # Authentication
-s.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+s.login("emeafutestmail@gmail.com", "qifx lzvf dugm qjqg")
 
 # message to be sent
 message = "Message_you_need_to_send"
