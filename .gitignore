@@ -26,7 +26,8 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-EMAIL_PASSWORD
+EMAIL_PASSWORD.py
+EMAIL_PASSWORD2.py
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
