@@ -1,1 +1,1 @@
-emeafutestmail@gmail.com
+EMAIL_ADDRESS = "emeafutestmail@gmail.com"

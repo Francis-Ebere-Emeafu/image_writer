@@ -1,1 +1,1 @@
-bbnk xlyx jsix alar
+"bbnk xlyx jsix alar"
