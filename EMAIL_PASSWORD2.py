@@ -1,1 +1,0 @@
-EMAIL_PASSWORD = "qifx lzvf dugm qjqg"

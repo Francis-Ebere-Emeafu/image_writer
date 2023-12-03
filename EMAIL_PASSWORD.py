@@ -1,1 +1,0 @@
-"bbnk xlyx jsix alar"
