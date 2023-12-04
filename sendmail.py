@@ -11,7 +11,7 @@ from EMAIL_USER import EMAIL_ADDRESS
 
 # Email configuration credentials
 from_email = EMAIL_ADDRESS
-password = EMAIL_PASSWORD
+password = "lioc hdme zboh yypf"
 smtp_server = "smtp.gmail.com"
 smtp_port = 587
 

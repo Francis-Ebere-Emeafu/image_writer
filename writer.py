@@ -88,20 +88,24 @@ if __name__ == "__main__":
             send_email(
             subject="Certificate of Participation",
             body=f"""
-            Hello {name},
 
-            Congratulations on all your efforts in the Indian Debate League''23, presented by the Indian Debating League (IDL),  Burlington English  and IIT Delhi Debsoc. Catch a Glimpse at https://www.linkedin.com/feed/update/urn:li:activity:7137279206874394624/
+Hello {first_name},
 
-            Attached is your E- Appreciation Certificate. In order to inspire others, do share your proud achievement on social media, tagging @theindiandebatingleague & @augli.ai. We wish you the best on this journey.
+Congratulations on all your efforts in the Indian Debate League''23, presented by the Indian Debating League (IDL),
+Burlington English  and IIT Delhi Debsoc. Catch a Glimpse at https://www.linkedin.com/feed/update/urn:li:activity:7137279206874394624/
 
-            Republic Day Forensics
-            
-            Republic Day Forensics is the biggest and most prestigious forensics tournament in India, where students compete in different speech and debate events. RDF 2023 has 4 speeches and 3 Debate Tournaments. 
+Attached is your E-Appreciation Certificate. In order to inspire others, do share your proud achievement on social media, 
+tagging @theindiandebatingleague & @augli.ai. We wish you the best on this journey.
 
-            Register for Republic Day Forensics - https://rzp.io/l/EzkDqJIb
-            Thank you for your continued support in building these critical thinking skills for your future.
+Republic Day Forensics
 
-            Keep Debating
+Republic Day Forensics is the biggest and most prestigious forensics tournament in India, 
+where students compete in different speech and debate events. RDF 2023 has 4 speeches and 3 Debate Tournaments. 
+
+Register for Republic Day Forensics - https://rzp.io/l/EzkDqJIb
+Thank you for your continued support in building these critical thinking skills for your future.
+
+Keep Debating
             """,
             to_email=receiving_email,
             attachment_path=name_path
