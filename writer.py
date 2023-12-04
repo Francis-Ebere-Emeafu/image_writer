@@ -71,27 +71,37 @@ if __name__ == "__main__":
             # Image, name position size and colour of text
             im = add_text(im, name, (1600, 415), size, (0,100,0))
             naming_file = name.replace(" ", "_")
-            name_path = "./saved-images/{}.jpg".format(naming_file)
+            name_path = "{}.jpg".format(naming_file)
             # Renaming the certificate
             # attachment_name = "{}.jpg".format(naming_file)
             # attachments_path = os.environ.get("attachment_name")
             print(counter, name )
             print(name_path)
+            first_name = name.split(" ")[0]
+            print(first_name)
+            print()
+            
+
             im.save(name_path)
             counter = counter + 1
 
             send_email(
             subject="Certificate of Participation",
             body=f"""
-            Dear {name},
+            Hello {name},
 
-            Thank you for making out time to participate in 3 edition of the India Debating League competition.
-            We are proud of your achievement thus far.
-            With more effort, you would achieve wonders in the nearest future.
+            Congratulations on all your efforts in the Indian Debate League''23, presented by the Indian Debating League (IDL),  Burlington English  and IIT Delhi Debsoc. Catch a Glimpse at https://www.linkedin.com/feed/update/urn:li:activity:7137279206874394624/
+
+            Attached is your E- Appreciation Certificate. In order to inspire others, do share your proud achievement on social media, tagging @theindiandebatingleague & @augli.ai. We wish you the best on this journey.
+
+            Republic Day Forensics
             
-            Your certificate of participation in attached.
+            Republic Day Forensics is the biggest and most prestigious forensics tournament in India, where students compete in different speech and debate events. RDF 2023 has 4 speeches and 3 Debate Tournaments. 
 
-            Congratulations!!!
+            Register for Republic Day Forensics - https://rzp.io/l/EzkDqJIb
+            Thank you for your continued support in building these critical thinking skills for your future.
+
+            Keep Debating
             """,
             to_email=receiving_email,
             attachment_path=name_path
