@@ -16,16 +16,17 @@ smtp_server = "smtp.gmail.com"
 smtp_port = 587
 
 
-def send_email(subject, body, to_email, attachment_path):
+def send_email(subject, body_plain, body_html, to_email, attachment_path):
  
     # Create the email message
-    msg = MIMEMultipart()
+    msg = MIMEMultipart("alternative")
     msg['From'] = from_email
     msg['To'] = to_email
     msg['Subject'] = subject
 
     # Attach the body of the email
-    msg.attach(MIMEText(body, 'plain'))
+    msg.attach(MIMEText(body_plain, 'plain'))
+    msg.attach(MIMEText(body_html, 'html'))
 
     # Attach the file
     attachment = open(attachment_path, "rb")

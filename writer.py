@@ -28,7 +28,6 @@ def add_text(im, text, topleft, size, colour):
     draw.text(topleft, text, font=font, fill=colour)
     return im
 
-
 if __name__ == "__main__":
         counter = 1
         for participant in participants:            
@@ -86,8 +85,8 @@ if __name__ == "__main__":
             counter = counter + 1
 
             send_email(
-            subject="Certificate of Participation",
-            body=f"""
+            subject = "Indian Debate League 2023 Participation Certificate",
+            body_plain = f"""
 
 Hello {first_name},
 
@@ -98,7 +97,6 @@ Attached is your E-Appreciation Certificate. In order to inspire others, do shar
 tagging @theindiandebatingleague & @augli.ai. We wish you the best on this journey.
 
 Republic Day Forensics
-
 Republic Day Forensics is the biggest and most prestigious forensics tournament in India, 
 where students compete in different speech and debate events. RDF 2023 has 4 speeches and 3 Debate Tournaments. 
 
@@ -106,7 +104,37 @@ Register for Republic Day Forensics - https://rzp.io/l/EzkDqJIb
 Thank you for your continued support in building these critical thinking skills for your future.
 
 Keep Debating
-            """,
+            """
+,
+            body_html = f"""
+
+<html>
+  <body>
+    <p>Hello <b>{first_name},</b></p>
+    <p>
+     Congratulations on all your efforts in the Indian Debate League''23, presented by the Indian Debating League (IDL),
+     Burlington English  and IIT Delhi Debsoc. Catch a Glimpse at https://www.linkedin.com/feed/update/urn:li:activity:7137279206874394624/
+    </p>
+    <p>
+     Attached is your E-Appreciation Certificate. In order to inspire others, do share your proud achievement on social media, 
+     tagging @theindiandebatingleague & @augli.ai. We wish you the best on this journey.
+    </p>
+    <p>
+     <b>Republic Day Forensics</b><br>
+     Republic Day Forensics is the biggest and most prestigious forensics tournament in India, 
+     where students compete in different speech and debate events. RDF 2023 has 4 speeches and 3 Debate Tournaments. 
+    </p>
+    <p>
+     Register for Republic Day Forensics - https://rzp.io/l/EzkDqJIb
+     <br>
+     Thank you for your continued support in building these critical thinking skills for your future.
+     </p>
+
+     <p><b>Keep Debating...!</b></p>
+  </body>
+</html>
+"""
+,
             to_email=receiving_email,
             attachment_path=name_path
             )
