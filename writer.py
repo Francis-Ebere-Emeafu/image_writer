@@ -146,7 +146,7 @@ Keep Debating
           #   del secure_participants[0]
           #   print(secure_participants)
             print()
-            file_2 = open("sent_list5.txt", "a")
+            file_2 = open("sent_list10.txt", "a")
             file_2.write(participant)
 
           #   for unsent in secure_participants:
