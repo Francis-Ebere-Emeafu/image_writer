@@ -12,8 +12,10 @@ from sendmail import send_email
 
 # Open file and read the lines
 print("Python Script to Write Names of Participants on Certificate")
-file = open('name_list.txt', 'r')
-participants = file.readlines()
+file_1 = open('name_list.txt', 'r')
+participants = file_1.readlines()
+secure_participants = participants
+
 
 
 def add_text(im, text, topleft, size, colour):
@@ -21,7 +23,7 @@ def add_text(im, text, topleft, size, colour):
     draw = ImageDraw.Draw(im)
     W, H = im.size
     _, _, w, h = draw.textbbox((0,0), text, font)
-    print("This is the count")
+    print("This is the width of the text box")
     print(w)
     # use this to position the text on the certificate
     topleft = ((W-w)/2,415)
@@ -29,7 +31,7 @@ def add_text(im, text, topleft, size, colour):
     return im
 
 if __name__ == "__main__":
-        counter = 1
+        counter = 0
         for participant in participants:            
             im = Image.open("./images/certificate1.jpg")
             # _width, _height = im.size
@@ -38,6 +40,7 @@ if __name__ == "__main__":
             # Retrieve person's details from the CSV FILE
             person = participant.split(",")
             name = person[0]
+            name = name.title()
             receiving_email = person[1]
 
             # print the person's details on the command line
@@ -49,7 +52,9 @@ if __name__ == "__main__":
             size = 100
             name = name.strip()
             name_length = int(len(name))
+            print("Size of name characters, to help decide font size")
             print(name_length)
+            print()
 
             # modify print size if the lenght of name is more than the below
             if name_length <= 35:
@@ -64,7 +69,6 @@ if __name__ == "__main__":
                  size = 50
             else:
                 # name = name[:35]
-                print(name)
                 size = 40
 
             # Image, name position size and colour of text
@@ -75,12 +79,10 @@ if __name__ == "__main__":
             # attachment_name = "{}.jpg".format(naming_file)
             # attachments_path = os.environ.get("attachment_name")
             print(counter, name )
-            print(name_path)
+            # Retrieve first name of participant
             first_name = name.split(" ")[0]
-            print(first_name)
-            print()
-            
 
+            # Save the image to the file
             im.save(name_path)
             counter = counter + 1
 
@@ -138,3 +140,23 @@ Keep Debating
             to_email=receiving_email,
             attachment_path=name_path
             )
+
+            print("Original Secured Participants")
+          #   print(secure_participants)
+          #   del secure_participants[0]
+          #   print(secure_participants)
+            print()
+            file_2 = open("sent_list5.txt", "a")
+            file_2.write(participant)
+
+          #   for unsent in secure_participants:
+          #        print(unsent)                 
+          #        file_2.write(unsent)
+            file_2.close()
+
+          #   Write the list of names of certificates generated and sent
+
+            print("Completed: ", +counter)
+            print()
+        
+               
